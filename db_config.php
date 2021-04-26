@@ -7,6 +7,8 @@
 
     $mysqli = new $mysqli($servidor, $usuario, $senha, $banco);
 
-    if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
+    if ($mysqli->connect_errno) {
+    echo "Falha ao conectar: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    }
 
 ?>
